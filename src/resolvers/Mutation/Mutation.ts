@@ -1,4 +1,3 @@
-
 import { authResolver } from "./auth";
 import { postResolver } from "./post";
 

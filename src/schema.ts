@@ -4,6 +4,7 @@ export const typeDefs = `#graphql
     myProfile: User
     posts: [Post]
     users: [User]
+    profile(userId: ID!): Profile
   }
 
  type Mutation{
@@ -22,6 +23,7 @@ export const typeDefs = `#graphql
   createPost( post: PostInput!): PostPayload
   updatePost( postId: ID!, post: PostInput! ): PostPayload
   deletePost(postId: ID!): PostPayload
+  publishPost(postId: ID!): PostPayload
 
     }
   
@@ -31,6 +33,7 @@ export const typeDefs = `#graphql
     content: String!
     author: User
     createdAt: String!
+    published: Boolean
   }
   type User {
     id : ID!
